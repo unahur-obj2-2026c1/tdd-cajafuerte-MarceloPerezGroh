@@ -3,6 +3,7 @@
 
 # Excluir la carpeta target/ (artefactos generados por Maven)
 target/
+notas.txt
 
 # Excluir archivos específicos de Maven
 pom.xml.versionsBackup
