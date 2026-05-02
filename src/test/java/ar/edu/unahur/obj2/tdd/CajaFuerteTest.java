@@ -44,4 +44,25 @@ public class CajaFuerteTest {
         caja.abrir(1234);
         assertTrue(caja.estaAbierta());
     }
+
+    // Nuevos
+    @Test
+    public void queSePuedaBloquearLaCajaFuerteAlIngresar3VecesMalLaContraseña() {
+        CajaFuerte caja = new CajaFuerte();
+        caja.cerrar(1234);
+        caja.abrir(1233);
+        caja.abrir(1444);
+        caja.abrir(1555);
+        assertTrue(caja.estaBloqueada());
+    }
+
+    @Test
+    public void queSeQuedeEn0ElContadorDeLaCajaFuerteAlIngresarCorrectamenteLaContraseña() {
+        CajaFuerte caja = new CajaFuerte();
+        caja.cerrar(1234);
+        caja.abrir(1233);
+        caja.abrir(1444);
+        caja.abrir(1234);
+        assertTrue(caja.estaAbierta());
+    }
 }

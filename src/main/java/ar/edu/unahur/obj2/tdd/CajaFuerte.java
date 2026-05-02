@@ -4,6 +4,7 @@ public class CajaFuerte {
 
     private Boolean abierta = true;
     private Integer codigo;
+    private Integer contador = 0;
 
     public Boolean estaAbierta() {
         return this.abierta;
@@ -12,6 +13,9 @@ public class CajaFuerte {
     public void abrir(Integer codigo) {
         if (codigoCorrecto(codigo)) {
             this.abierta = true;
+            contador = 0;
+        } else {
+            contador = contador + 1;
         }
     }
 
@@ -28,6 +32,10 @@ public class CajaFuerte {
 
     private boolean codigoCorrecto(Integer codigo) {
         return this.codigo.equals(codigo);
+    }
+
+    public Boolean estaBloqueada() {
+        return this.contador >= 3;
     }
 
 }
